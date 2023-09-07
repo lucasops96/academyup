@@ -1,11 +1,12 @@
 /* eslint-disable prettier/prettier */
 import {  UseGuards } from '@nestjs/common';
-import { Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { AuthorizationGuard } from 'src/http/authorization/authorization.guard';
 import { Product } from '../models/product';
 import { ProductsService } from 'src/services/products.service';
+import { CreateProductInput } from '../inputs/create-product-input';
 
-@Resolver()
+@Resolver(()=> Product)
 export class ProductsResolver {
     constructor(private productsService: ProductsService){}
 
@@ -15,8 +16,9 @@ export class ProductsResolver {
         return this.productsService.listAllProducts();
     }
 
+    @UseGuards(AuthorizationGuard)
     @Mutation(()=> Product)
-    createProduct(){
-        return this.productsService.createProduct();
+    createProduct(@Args('data') data: CreateProductInput){
+        return this.productsService.createProduct(data);
     }
 }
