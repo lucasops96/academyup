@@ -7,6 +7,7 @@ import { StudentsService } from "src/services/students.service";
 import { EnrollmentsService } from "src/services/enrollments.service";
 import { AuthUser, CurrentUser } from "src/http/authorization/current-user";
 
+
 @Resolver(()=> Student)
 export class StudentsResolver{
     constructor(
