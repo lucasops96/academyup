@@ -10,13 +10,13 @@
 
 ### Serviço de compras (purchases)
 
-- [Admin] Cadastro de produtos
-- [Admin] Listagem de produtos
+- [Admin] Cadastro de produtos x
+- [Admin] Listagem de produtos x
 
-- [Auth] Listagem de compras
+- [Auth] Listagem de compras x
 
-- [Public] Compra de um produto
-- [Public] Lista produtos disponíveis p/ compra
+- [Public] Compra de um produto x
+- [Public] Lista produtos disponíveis p/ compra x
 
 ### Serviço de sala de aula (classroom)
 
